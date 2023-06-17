@@ -1,0 +1,9 @@
+<Input
+  @type="checkbox" 
+  id={{this.fieldID}}
+  @checked={{@checked}}
+  {{on "change" @checkBoxEvent}}
+/>
+<label class="ui-component-check-box-input-label"  for={{this.fieldID}}>
+  {{@label}}
+</label>

@@ -1,0 +1,20 @@
+<section class="filter-container">
+
+  {{!-- Filter Header --}}
+  <div class="filter-header">
+    <button type="button" class="btn btn-default">
+      {{this.resetLabel}}
+		</button>
+    <span class="filter-header-title">{{this.headerTitle}}</span>
+    <button {{on "click" this.applyFilters}} type="button" class="btn btn-primary">
+      {{this.applyLabel}}
+		</button>
+  </div>
+
+  {{!-- Filter Body --}}
+  <FilterBuilder
+    @modelSchema = {{this.modelSchema}}
+    @formSchema  = {{this.formSchema}}
+  />
+
+</section>

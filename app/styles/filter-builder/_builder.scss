@@ -1,0 +1,52 @@
+.fields-builder-panel-wrapper {
+
+  &--active {
+    .field-level {
+      &::before {
+        content: " ";
+        background-image: url('/assets/arrow-return.svg');
+        position: absolute;
+        left: 22px;
+        width: 20px;
+        height: 24px;
+        background-repeat: no-repeat;
+        transform: rotate(268deg);
+      }
+    }
+  }
+
+  .fields-builder-number-field {
+    #ui-component-dropdown {
+      width: 100%;
+    }
+  }
+
+  .fields-builder-second-level {
+    margin-top: 16px;
+  }
+
+  .field-level {
+    margin-left: 32px;
+  }
+
+  .field-level-stretch {
+    @include flexbox(space-between, center);
+  }
+
+  .dependant-fields-wrapper {
+    margin-top: 8px;
+
+    .dependant-field-label {
+      color: $background-grey-primary;
+    }
+  }
+
+  // Field Level Styles
+  .filter-builder-number-field {
+    max-width: 40px;
+  }
+
+  .fields-builders-date-field {
+    width: 96px;
+  }
+}

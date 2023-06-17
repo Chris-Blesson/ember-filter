@@ -1,0 +1,6 @@
+{{#each @field.choices as |choice|}}
+  <input name={{choice.id}} checked={{(eq this.radioSelection choice.id)}} id="filter-builder-radio" {{on "change" this.radioToggle}} type="radio"/>
+  <label for="filter-builder-radio">
+		{{choice.label}}
+	</label>
+{{/each}}

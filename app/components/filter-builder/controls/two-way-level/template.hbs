@@ -1,0 +1,11 @@
+<div class="{{if @showIcon "field-level" "field-level-stretch" }} fields-two-way">
+  {{yield (hash
+  firstSection = (component 'ui-components/empty-template')
+  )
+  }}
+  <span class="operation-type">{{@type}}</span>
+  {{yield (hash
+  secondSection = (component 'ui-components/empty-template')
+  )
+  }}
+</div>

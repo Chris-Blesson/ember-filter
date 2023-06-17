@@ -1,0 +1,12 @@
+{{yield (hash
+  header=(
+   component "ui-components/slider-accordion/accordion-header"
+   toggleAccordion = this.toggleAccordion
+   isCollapsed = this.isCollapsed
+  )
+  panel=(
+   component "ui-components/slider-accordion/accordion-panel"
+   isCollapsed = this.isCollapsed
+  )
+  isCollapsed = this.isCollapsed
+)}}

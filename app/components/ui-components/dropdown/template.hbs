@@ -1,0 +1,8 @@
+<select id={{this.fieldID}} {{on "change" @onChange}}>
+  {{#each @options as |optionValue|}}
+    <option value={{(get optionValue @optionIdPath)}} selected={{eq (get optionValue @optionIdPath) @value}}>{{get optionValue @optionLabelPath}}</option>
+  {{/each}}
+</select>
+<label class="ui-component-dropdown-label" for={{this.fieldID}}>
+  {{@label}}
+</label>

@@ -1,0 +1,8 @@
+.ember-application {
+  // Base configuration files and utility files
+  @import "base/main";
+
+
+  @import "ui-components/main";
+  @import "filter-builder/main";
+}

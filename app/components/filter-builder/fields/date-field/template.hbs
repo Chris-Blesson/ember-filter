@@ -1,0 +1,58 @@
+<section filter-builder-condition={{@condition}} class="fields-builder-date-field">
+  <UiComponents::Dropdown
+    @optionIdPath = "operation"
+    @optionLabelPath = "label"
+    @value={{this.selectedOption}}
+    @options={{this.operations}}
+    @onChange={{this.updateCurrentOperation}}
+  />
+
+  {{#if this.hasDefaultLevelTwo}}  
+    <div class="fields-builder-second-level">
+    <FilterBuilder::Controls::SecondLevelRenderer as |secondLevelRenderer|>
+        {{#if (eq this.levelTwoCategory 'one-way')}}
+          <secondLevelRenderer.oneWay>
+            {{!-- template-lint-disable require-input-label --}}
+            <EmberFlatpickr
+              class="fields-builders-date-field"
+              placeholder="Pick dates"
+              @allowInput={{false}}
+              @date={{this.date}}
+              @enableTime={{false}}
+              @onChange={{this.onDatesChange}}
+            />
+          </secondLevelRenderer.oneWay>
+        {{else}}
+          <secondLevelRenderer.twoWay
+            @type = "and"
+          as |twoWay|>
+            <twoWay.firstSection>
+              {{!-- template-lint-disable require-input-label --}}
+              <EmberFlatpickr
+              class="fields-builders-date-field"
+              name="from"
+              placeholder="YYYY-MM-DD"
+              @allowInput={{false}}
+              @date={{this.date}}
+              @enableTime={{false}}
+              @onChange={{this.onDatesChange}}
+            />
+            </twoWay.firstSection>
+            <twoWay.secondSection>
+              {{!-- template-lint-disable require-input-label --}}
+              <EmberFlatpickr
+              class="fields-builders-date-field"
+              name="to"
+              placeholder={{this.dateFormat}}
+              @allowInput={{false}}
+              @date={{this.date}}
+              @enableTime={{false}}
+              @onChange={{this.onDatesChange}}
+            />
+            </twoWay.secondSection>
+          </secondLevelRenderer.twoWay>
+        {{/if}}
+    </FilterBuilder::Controls::SecondLevelRenderer>
+    </div>
+  {{/if}}
+</section>

@@ -1,0 +1,18 @@
+<section class="slider-accordion-header">
+  <div class="slider-accordion-header-trigger-wrapper">
+
+    {{#if @hasCustomHeader}}
+      {{!-- Extendable Header --}}
+      {{yield}}
+    {{else}}
+      {{!-- Default Toggle --}}
+      <UiComponents::InputCheckbox
+        class = "slider-accordion-header-trigger"
+        @label = {{@title}}
+        @fieldId = {{@fieldId}}
+        @checked = {{@isCollapsed}}
+        @checkBoxEvent = {{@toggleAccordion}}
+      />
+    {{/if}}
+  </div>
+</section>

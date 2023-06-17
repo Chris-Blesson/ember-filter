@@ -1,0 +1,37 @@
+<div class="filter-builder-wrapper">
+  <form ...attributes>
+    <UiComponents::SliderAccordion as |accordion|>
+      {{#each @formSchema as |field|}}
+      <accordion.item as |accordionItem|>
+        <accordionItem.header
+          @title = {{field.label}}
+          @fieldId = {{field.name}}
+        />
+        <accordionItem.panel>
+          <div class="fields-builder-panel-wrapper {{if accordionItem.isCollapsed "fields-builder-panel-wrapper--active"}}">
+            {{component (concat "filter-builder/fields/" field.inputType)
+            object = @modelSchema
+            condition=field.name}}
+
+            {{#if field.dependantFields}}  
+              <div class="dependant-fields-wrapper">
+                {{#each field.dependantFields as |dependantField|}}
+                  <div class="dependant-fields-row">
+                    <span class="dependant-field-label">{{dependantField.label}}:</span>
+                    {{component (concat "filter-builder/fields/" dependantField.inputType)
+                      parent = field.name
+                      isDependant = true
+                      object = @modelSchema
+                      field = dependantField}}
+                  </div>
+                {{/each}}
+              </div>
+            {{/if}}
+          </div>
+
+        </accordionItem.panel>
+      </accordion.item>
+      {{/each}}
+    </UiComponents::SliderAccordion>
+  </form>
+</div>
