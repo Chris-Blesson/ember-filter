@@ -10,6 +10,7 @@ export default class UiComponentsFilterComponent extends Component {
   @service router;
 
   @tracked modelSchema = {};
+
   get resetLabel() {
     return this.args.resetLabel || 'Clear';
   }
@@ -36,7 +37,6 @@ export default class UiComponentsFilterComponent extends Component {
     return hash;
   }
 
-
   @action
   resetFilters() { }
 
@@ -44,7 +44,7 @@ export default class UiComponentsFilterComponent extends Component {
   applyFilters() {
     let queryHash = JSON.stringify(this.queryHash);
     queryHash = new URLSearchParams(queryHash).toString();
-    console.log('Query Hash', queryHash);
+    console.log('Query Hash', this.queryHash);
     this.router.transitionTo('dashboard', { queryParams: { queryHash } })
   }
 }

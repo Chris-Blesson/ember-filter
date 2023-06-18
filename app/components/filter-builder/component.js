@@ -8,6 +8,7 @@ export default class FilterBuilderComponent extends Component {
 
   @tracked currentOperation = this.selectedOption;
 
+
   get hasDefaultLevelTwo() {
     return this.levelTwoCategory;
   }
@@ -20,10 +21,22 @@ export default class FilterBuilderComponent extends Component {
     return levelTwoType;
   }
 
+  /**
+   * Extracts the fields configs from modelSchema
+   * @param {Object} modelSchema - Model Schema were filter updates are being tracked
+   * @param {*} fieldName - Field Name from the list of fields
+   * @return {Object} - returns hash of the particular field 
+  */
   _previousState(modelSchema, fieldName) {
     return get(modelSchema, fieldName);
   }
 
+  /**
+   * Constructs value to be updated and filter values are updated
+   * @param {String} { name } - Field that was updated
+   * @param {String} { value } - Value that was updated
+   * @return {Object} Updated hash with the latest value 
+  */
   _constructPropertyValue({ name, value }) {
     let { object, condition } = this.args;
     let existingHash = this._previousState(object, condition) || { value: {} };

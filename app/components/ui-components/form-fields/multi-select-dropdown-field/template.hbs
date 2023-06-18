@@ -1,0 +1,8 @@
+<PowerSelectMultiple
+  @searchEnabled={{true}}
+  @options={{@choices}}
+  @selected={{@selection}}
+  @placeholder="Select options"
+  @onChange={{@selectionHandler}} as |choice|>
+  {{choice.label}}
+</PowerSelectMultiple>

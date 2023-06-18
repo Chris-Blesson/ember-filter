@@ -1,7 +1,7 @@
 .ember-application {
   // Base configuration files and utility files
   @import "base/main";
-
+  @import "ember-power-select";
 
   @import "ui-components/main";
   @import "filter-builder/main";

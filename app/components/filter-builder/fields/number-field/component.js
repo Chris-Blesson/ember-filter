@@ -7,5 +7,4 @@ export default class FilterBuilderFieldsNumberFieldComponent extends Component {
     return INPUT_OPERATIONS;
   }
 
-
 }

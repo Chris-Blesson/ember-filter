@@ -1,1 +1,7 @@
-Multi select dropdown field
+<FilterBuilder::Controls::FilterField
+  @object = {{@object}}
+  @inputType = {{@inputType}}
+  @condition = {{@condition}}
+  @operations = {{this.operations}}
+  @filterFormComponent = {{component (concat 'ui-components/form-fields/' @inputType) class="filter-builder-multi-select-dropdown-field" selection=this.selection choices=@field.choices selectionHandler=this.selectionHandler}}
+/>

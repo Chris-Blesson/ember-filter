@@ -13,13 +13,20 @@ const FORM_BUILDER_TYPE_MAPPING = {
 const OPERATIONS = {
   IS: 'is',
   IS_GREATER_THAN: 'is_greater_than',
-  IS_IN_THE_RANGE: 'is_in_the_range'
+  IS_IN_THE_RANGE: 'is_in_the_range',
+  INCLUDES: 'includes',
+  DOES_NOT_INCLUDE: 'does_not_include'
 }
 
 const ONE_WAY_CATEGORY = [OPERATIONS.IS, OPERATIONS.IS_GREATER_THAN];
 const TWO_WAY_CATEGORY = [OPERATIONS.IS_IN_THE_RANGE];
+const DROPDOWN_CATEGORY = [OPERATIONS.INCLUDES, OPERATIONS.INCLUDES]
 
 const INPUT_OPERATIONS = [
+  {
+    operation: '',
+    label: '--',
+  },
   {
     operation: OPERATIONS.IS,
     label: 'is equal to',
@@ -34,6 +41,21 @@ const INPUT_OPERATIONS = [
   }
 ]
 
+const DROPDOWN_OPERATIONS = [
+  {
+    operation: '',
+    label: '--',
+  },
+  {
+    operation: OPERATIONS.INCLUDES,
+    label: 'includes',
+  },
+  {
+    operation: OPERATIONS.DOES_NOT_INCLUDE,
+    label: 'does not include',
+  }
+]
+
 export {
   ONE_WAY,
   TWO_WAY,
@@ -41,5 +63,7 @@ export {
   INPUT_OPERATIONS,
   ONE_WAY_CATEGORY,
   TWO_WAY_CATEGORY,
+  DROPDOWN_CATEGORY,
+  DROPDOWN_OPERATIONS,
   FORM_BUILDER_TYPE_MAPPING
 }
