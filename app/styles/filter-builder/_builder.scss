@@ -1,5 +1,9 @@
 .fields-builder-panel-wrapper {
 
+  .operation-type {
+    padding: 0 8px;
+  }
+
   &--active {
     .field-level {
       &::before {
@@ -46,7 +50,10 @@
     max-width: 40px;
   }
 
-  .fields-builders-date-field {
+  .fields-builder-date-field,
+  .ember-flatpickr-input {
     width: 96px;
+    padding-left: 2px;
+    padding-right: 4px;
   }
 }

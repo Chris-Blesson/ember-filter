@@ -1,0 +1,33 @@
+<section filter-builder-condition={{@condition}} class={{(concat "fields-builder-" @inputType)}}>
+  <UiComponents::Dropdown
+    @optionIdPath = {{this.optionIdPath}}
+    @optionLabelPath = {{this.optionLabelPath}}
+    @value={{this.selectedOption}}
+    @options={{@operations}}
+    @onChange={{this.updateCurrentOperation}}
+  />
+
+  {{#if this.hasDefaultLevelTwo}}
+    <div class="fields-builder-second-level">
+      <FilterBuilder::Controls::SecondLevelRenderer as |secondLevelRenderer|>
+        {{#if (eq this.levelTwoCategory 'one-way')}}
+          <secondLevelRenderer.oneWay>
+            {{component @filterFormComponent updateHandler=this.updateFields}}
+          </secondLevelRenderer.oneWay>
+        {{else}}
+          <secondLevelRenderer.twoWay
+            @type = {{this.type}}
+            @showIcon = {{this.showIcon}}
+          as |twoWay|>
+            <twoWay.firstSection>
+              {{component @filterFormComponent updateHandler=this.updateFields name="from"}}
+            </twoWay.firstSection>
+            <twoWay.secondSection>
+              {{component @filterFormComponent updateHandler=this.updateFields  name="to"}}
+            </twoWay.secondSection>
+          </secondLevelRenderer.twoWay>
+        {{/if}}
+      </FilterBuilder::Controls::SecondLevelRenderer>
+    </div>
+  {{/if}}
+</section>

@@ -9,5 +9,6 @@ export default class UiComponentsSliderAccordionAccordionItemComponent extends C
   @action
   toggleAccordion() {
     this.isCollapsed = !this.isCollapsed;
+    this.args.updateCallback(this.args.fieldName, this.isCollapsed);
   }
 }

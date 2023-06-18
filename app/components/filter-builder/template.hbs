@@ -2,7 +2,7 @@
   <form ...attributes>
     <UiComponents::SliderAccordion as |accordion|>
       {{#each @formSchema as |field|}}
-      <accordion.item as |accordionItem|>
+      <accordion.item @fieldName={{field.name}} @updateCallback = {{this.fieldStateUpdate}} as |accordionItem|>
         <accordionItem.header
           @title = {{field.label}}
           @fieldId = {{field.name}}
@@ -10,6 +10,7 @@
         <accordionItem.panel>
           <div class="fields-builder-panel-wrapper {{if accordionItem.isCollapsed "fields-builder-panel-wrapper--active"}}">
             {{component (concat "filter-builder/fields/" field.inputType)
+            inputType = field.inputType
             object = @modelSchema
             condition=field.name}}
 
@@ -18,11 +19,11 @@
                 {{#each field.dependantFields as |dependantField|}}
                   <div class="dependant-fields-row">
                     <span class="dependant-field-label">{{dependantField.label}}:</span>
-                    {{component (concat "filter-builder/fields/" dependantField.inputType)
+                    {{component (concat "ui-components/form-fields/" dependantField.inputType)
                       parent = field.name
-                      isDependant = true
-                      object = @modelSchema
-                      field = dependantField}}
+                      field = dependantField
+                      updateCallback = this.updateDependantFieldsToModel
+                      choices = dependantField.choices}}
                   </div>
                 {{/each}}
               </div>

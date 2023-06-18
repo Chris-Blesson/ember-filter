@@ -1,35 +1,7 @@
-<section filter-builder-condition={{@condition}} class="fields-builder-number-field">
-  <UiComponents::Dropdown
-    @optionIdPath = "operation"
-    @optionLabelPath = "label"
-    @value={{this.selectedOption}}
-    @options={{this.operations}}
-    @onChange={{this.updateCurrentOperation}}
-  />
-  {{#if this.hasDefaultLevelTwo}}  
-    <div class="fields-builder-second-level">
-    <FilterBuilder::Controls::SecondLevelRenderer as |secondLevelRenderer|>
-        {{#if (eq this.levelTwoCategory 'one-way')}}
-          <secondLevelRenderer.oneWay>
-            {{!-- template-lint-disable require-input-label --}}
-            <Input {{on "change" this.updateFields}} class="filter-builder-number-field" @type="number"/>
-          </secondLevelRenderer.oneWay>
-        {{else}}
-          <secondLevelRenderer.twoWay
-            @type = "and"
-            @showIcon = {{true}}
-          as |twoWay|>
-            <twoWay.firstSection>
-              {{!-- template-lint-disable require-input-label --}}
-              <Input name="from" {{on "change" this.updateFields}} class="filter-builder-number-field" @type="number"/>
-            </twoWay.firstSection>
-            <twoWay.secondSection>
-              {{!-- template-lint-disable require-input-label --}}
-              <Input name="to" {{on "change" this.updateFields}} class="filter-builder-number-field" @type="number"/>
-            </twoWay.secondSection>
-          </secondLevelRenderer.twoWay>
-        {{/if}}
-    </FilterBuilder::Controls::SecondLevelRenderer>
-    </div>
-  {{/if}}
-</section>
+<FilterBuilder::Controls::FilterField
+  @object = {{@object}}
+  @inputType = {{@inputType}}
+  @condition = {{@condition}}
+  @operations = {{this.operations}}
+  @filterFormComponent = {{component (concat 'ui-components/form-fields/' @inputType) class="filter-builder-number-field"}}
+/>

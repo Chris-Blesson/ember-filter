@@ -1,12 +1,7 @@
-import FilterBuilderRuleEngineComponent from '../../rule-engine/component';
+import Component from '@glimmer/component';
 
-import { tracked } from '@glimmer/tracking';
 import { INPUT_OPERATIONS } from 'ember-filter/constants/form';
-
-export default class FilterBuilderFieldsNumberFieldComponent extends FilterBuilderRuleEngineComponent {
-
-  @tracked selectedOption = INPUT_OPERATIONS[0].operation;
-
+export default class FilterBuilderFieldsNumberFieldComponent extends Component {
   
   get operations() {
     return INPUT_OPERATIONS;
