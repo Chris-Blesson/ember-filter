@@ -5,4 +5,6 @@
   @condition = {{@condition}}
   @operations = {{this.operations}}
   @filterFormComponent =  {{component (concat 'ui-components/form-fields/' @inputType) date=this.date onChange=this.onDatesChange allowInput=false  enableTime=false}}
+  @multiLevelFirstSection = {{component 'ui-components/form-fields/number-field' name="periodValue" updateHandler=this.updateFields}}
+  @multiLevelSecondSection = {{component 'ui-components/dropdown' name="period" optionIdPath="operation" optionLabelPath="label" value=this.multiLevelOption options=this.multiCategoryChoices onChange=this.updateFields}}
 />

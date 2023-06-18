@@ -1,4 +1,4 @@
-<select id={{this.fieldID}} {{on "change" @onChange}}>
+<select name={{@name}} id={{this.fieldID}} {{on "change" @onChange}}>
   {{#each @options as |optionValue|}}
     <option value={{(get optionValue @optionIdPath)}} selected={{eq (get optionValue @optionIdPath) @value}}>{{get optionValue @optionLabelPath}}</option>
   {{/each}}

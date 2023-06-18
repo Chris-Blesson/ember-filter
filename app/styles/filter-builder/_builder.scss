@@ -4,6 +4,15 @@
     padding: 0 8px;
   }
 
+  .filter-builder-multi-level-renderer-section {
+    @include flexbox(space-between, center);
+    margin-top: 16px;
+
+    .multi-section-second-level-wrapper {
+      margin-left: 8px;
+    }
+  }
+
   &--active {
     .field-level {
       &::before {
@@ -40,7 +49,8 @@
   }
 
   // Field Level Styles
-  .filter-builder-number-field {
+  .filter-builder-number-field,
+  .form-fields-number-field {
     max-width: 40px;
   }
 
@@ -50,4 +60,6 @@
     padding-left: 2px;
     padding-right: 4px;
   }
+
+
 }

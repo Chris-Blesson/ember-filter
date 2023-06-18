@@ -1,0 +1,12 @@
+<div class="filter-builder-multi-level-renderer-section field-level">
+  <div class="multi-section-first-level-wrapper">
+    {{yield (hash
+      firstLevel = (component 'ui-components/empty-template' property=@property)
+    )}}
+  </div>
+  <div class="multi-section-second-level-wrapper">
+    {{yield (hash
+      secondLevel = (component 'ui-components/empty-template' property=@property)
+    )}}
+  </div>
+</div>

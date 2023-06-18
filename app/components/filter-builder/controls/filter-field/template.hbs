@@ -7,7 +7,7 @@
     @onChange={{this.updateCurrentOperation}}
   />
 
-  {{#if this.hasDefaultLevelTwo}}
+  {{#if (and (not this.hasMultiLevelCategory) this.hasDefaultLevelTwo)}}
     <div class="fields-builder-second-level">
       <FilterBuilder::Controls::SecondLevelRenderer as |secondLevelRenderer|>
         {{#if (eq this.levelTwoCategory 'one-way')}}
@@ -29,5 +29,16 @@
         {{/if}}
       </FilterBuilder::Controls::SecondLevelRenderer>
     </div>
+  {{else}}
+    {{#if this.isValidOperation}}
+      <FilterBuilder::Controls::MultiLevelRenderer @showIcon = {{this.showIcon}} as |MultiLevel|>
+        <MultiLevel.firstLevel>
+          {{component @multiLevelFirstSection}}
+        </MultiLevel.firstLevel>
+        <MultiLevel.secondLevel>
+          {{component @multiLevelSecondSection}}
+        </MultiLevel.secondLevel>
+      </FilterBuilder::Controls::MultiLevelRenderer>
+    {{/if}}
   {{/if}}
 </section>

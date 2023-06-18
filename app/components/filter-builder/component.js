@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 
 import { tracked } from '@glimmer/tracking';
 import { set, get, action } from '@ember/object';
-import { ONE_WAY, TWO_WAY, TWO_WAY_CATEGORY } from 'ember-filter/constants/form';
+import { ONE_WAY, TWO_WAY, TWO_WAY_CATEGORY, MULTI_LEVEL_CATEGORY } from 'ember-filter/constants/form';
 
 export default class FilterBuilderComponent extends Component {
 
@@ -11,6 +11,14 @@ export default class FilterBuilderComponent extends Component {
 
   get hasDefaultLevelTwo() {
     return this.levelTwoCategory;
+  }
+
+  get isValidOperation() {
+    return this.currentOperation !== '--';
+  }
+
+  get hasMultiLevelCategory(){
+    return MULTI_LEVEL_CATEGORY.includes(this.currentOperation);
   }
 
   get levelTwoCategory() {
@@ -60,7 +68,7 @@ export default class FilterBuilderComponent extends Component {
     let { object, condition } = this.args;
     this.currentOperation = event.target.value;
     let existingHash = this._previousState(object, condition) || { value: {} };
-    if (this.levelTwoCategory === TWO_WAY) {
+    if (this.levelTwoCategory !== ONE_WAY || this.hasMultiLevelCategory) {
       existingHash.value = {};
     }
     existingHash.operation = this.currentOperation;
