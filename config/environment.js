@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'ember-filter',
     environment,
-    rootURL: '/',
+    rootURL: '/ember-filter',
     locationType: 'history',
     EmberENV: {
       FEATURES: {
