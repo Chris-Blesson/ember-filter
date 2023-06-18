@@ -1,0 +1,403 @@
+.ember-application .btn {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dadfe3;
+  border-radius: 6px;
+  padding: 6px 8px 4px 8px;
+}
+.ember-application .btn.btn-default {
+  background: #fff;
+}
+.ember-application .btn.btn-primary {
+  background: #576BCD;
+  color: #fff;
+}
+.ember-application .ember-basic-dropdown {
+  position: relative;
+}
+.ember-application .ember-basic-dropdown,
+.ember-application .ember-basic-dropdown-content,
+.ember-application .ember-basic-dropdown-content * {
+  box-sizing: border-box;
+}
+.ember-application .ember-basic-dropdown-content {
+  position: absolute;
+  width: auto;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+.ember-application .ember-basic-dropdown-content--left {
+  left: 0;
+}
+.ember-application .ember-basic-dropdown-content--right {
+  right: 0;
+}
+.ember-application .ember-basic-dropdown-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.ember-application .ember-basic-dropdown-content-wormhole-origin {
+  display: inline;
+}
+.ember-application .ember-power-select-dropdown * {
+  box-sizing: border-box;
+}
+.ember-application .ember-power-select-trigger {
+  position: relative;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  border-radius: 4px;
+  background-color: #ffffff;
+  line-height: 1.75;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.75em;
+  user-select: none;
+  -webkit-user-select: none;
+  color: inherit;
+  /* Minimum clearfix for modern browsers */
+}
+.ember-application .ember-power-select-trigger:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ember-application .ember-power-select-trigger:focus,
+.ember-application .ember-power-select-trigger--active {
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  box-shadow: none;
+}
+.ember-application .ember-basic-dropdown-trigger--below.ember-power-select-trigger[aria-expanded=true],
+.ember-application .ember-basic-dropdown-trigger--in-place.ember-power-select-trigger[aria-expanded=true] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ember-application .ember-basic-dropdown-trigger--above.ember-power-select-trigger[aria-expanded=true] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ember-application .ember-power-select-placeholder {
+  color: #999999;
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ember-application .ember-power-select-status-icon {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 4px 0 4px;
+  border-color: #aaaaaa transparent transparent transparent;
+}
+.ember-basic-dropdown-trigger[aria-expanded=true] .ember-application .ember-power-select-status-icon {
+  transform: rotate(180deg);
+}
+.ember-application .ember-power-select-clear-btn {
+  position: absolute;
+  cursor: pointer;
+}
+.ember-application .ember-power-select-multiple-options {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+.ember-application .ember-power-select-trigger-multiple-input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  line-height: inherit;
+  -webkit-appearance: none;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  text-indent: 2px;
+  /* There's a browser bug where this selectos cannot be chained with commas */
+}
+.ember-application .ember-power-select-trigger-multiple-input:disabled {
+  background-color: #eeeeee;
+}
+.ember-application .ember-power-select-trigger-multiple-input::placeholder {
+  opacity: 1;
+  color: #999999;
+}
+.ember-application .ember-power-select-trigger-multiple-input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #999999;
+}
+.ember-application .ember-power-select-trigger-multiple-input::-moz-placeholder {
+  opacity: 1;
+  color: #999999;
+}
+.ember-application .ember-power-select-trigger-multiple-input::-ms-input-placeholder {
+  opacity: 1;
+  color: #999999;
+}
+.ember-application .ember-power-select-multiple-option {
+  border: 1px solid gray;
+  border-radius: 4px;
+  color: #333333;
+  background-color: #e4e4e4;
+  padding: 0 4px;
+  line-height: 1.45;
+  margin: 2px 0 2px 3px;
+}
+.ember-application .ember-power-select-multiple-remove-btn {
+  cursor: pointer;
+}
+.ember-application .ember-power-select-multiple-remove-btn:not(:hover) {
+  opacity: 0.5;
+}
+.ember-application .ember-power-select-search {
+  padding: 4px;
+}
+.ember-application .ember-power-select-search-input {
+  border: 1px solid #aaaaaa;
+  border-radius: 0;
+  width: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0 5px;
+}
+.ember-application .ember-power-select-search-input:focus {
+  border: 1px solid #aaaaaa;
+  box-shadow: none;
+}
+.ember-application .ember-power-select-dropdown {
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  line-height: 1.75;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow: hidden;
+  color: inherit;
+}
+.ember-application .ember-power-select-dropdown.ember-basic-dropdown-content--above {
+  border-top: 1px solid #aaaaaa;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ember-application .ember-power-select-dropdown.ember-basic-dropdown-content--below, .ember-application .ember-power-select-dropdown.ember-basic-dropdown-content--in-place {
+  border-top: none;
+  border-bottom: 1px solid #aaaaaa;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ember-application .ember-power-select-dropdown.ember-basic-dropdown-content--in-place {
+  width: 100%;
+}
+.ember-application .ember-power-select-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ember-application .ember-power-select-options[role=listbox] {
+  overflow-y: auto; /* in firefox in windows this can cause a word-break issue. Try `overflow-y: scroll` if that happens */
+  -webkit-overflow-scrolling: touch;
+  max-height: 12.25em;
+}
+.ember-application .ember-power-select-option {
+  cursor: pointer;
+  padding: 0 8px;
+}
+.ember-application .ember-power-select-group[aria-disabled=true] {
+  color: #999999;
+  cursor: not-allowed;
+}
+.ember-application .ember-power-select-group[aria-disabled=true] .ember-power-select-option,
+.ember-application .ember-power-select-option[aria-disabled=true] {
+  color: #999999;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.ember-application .ember-power-select-option[aria-selected=true] {
+  background-color: #dddddd;
+}
+.ember-application .ember-power-select-option[aria-current=true] {
+  background-color: #5897fb;
+  color: #ffffff;
+}
+.ember-application .ember-power-select-group-name {
+  cursor: default;
+  font-weight: bold;
+}
+.ember-application .ember-power-select-trigger[aria-disabled=true] {
+  background-color: #eeeeee;
+}
+.ember-application .ember-power-select-trigger {
+  padding: 0 16px 0 0;
+}
+.ember-application .ember-power-select-selected-item, .ember-application .ember-power-select-placeholder {
+  margin-left: 8px;
+}
+.ember-application .ember-power-select-status-icon {
+  right: 5px;
+}
+.ember-application .ember-power-select-clear-btn {
+  right: 25px;
+}
+.ember-application .ember-power-select-group .ember-power-select-group .ember-power-select-group-name {
+  padding-left: 24px;
+}
+.ember-application .ember-power-select-group .ember-power-select-group .ember-power-select-option {
+  padding-left: 40px;
+}
+.ember-application .ember-power-select-group .ember-power-select-option {
+  padding-left: 24px;
+}
+.ember-application .ember-power-select-group .ember-power-select-group-name {
+  padding-left: 8px;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] {
+  padding: 0 0 0 16px;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-selected-item, .ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-placeholder {
+  margin-right: 8px;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-multiple-option {
+  float: right;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-trigger-multiple-input {
+  float: right;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-status-icon {
+  left: 5px;
+  right: initial;
+}
+.ember-application .ember-power-select-trigger[dir=rtl] .ember-power-select-clear-btn {
+  left: 25px;
+  right: initial;
+}
+.ember-application .ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group .ember-power-select-group-name {
+  padding-right: 24px;
+}
+.ember-application .ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group .ember-power-select-option {
+  padding-right: 40px;
+}
+.ember-application .ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-option {
+  padding-right: 24px;
+}
+.ember-application .ember-power-select-dropdown[dir=rtl] .ember-power-select-group .ember-power-select-group-name {
+  padding-right: 8px;
+}
+.ember-application .filter-container {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 296px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #dadfe3;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(18, 52, 77, 0.06);
+}
+.ember-application .filter-container .filter-header {
+  padding: 8px;
+  background-color: #F9FAFC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ember-application .ui-component-check-box-input-label {
+  margin-left: 4px;
+  cursor: pointer;
+}
+.ember-application input[type=checkbox i] {
+  cursor: pointer;
+}
+.ember-application .slider-accordion-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+}
+.ember-application .slider-accordion-header .slider-accordion-header-trigger-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  border: none;
+  padding: 8px;
+  text-align: left;
+  background: #fff;
+  border-top: 1px solid #ECEDF0;
+  cursor: pointer;
+}
+.ember-application .slider-accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: #F9FAFC;
+  transition: max-height 0.5s ease;
+}
+.ember-application .slider-accordion-panel .panel-content {
+  padding: 12px 20px 20px 20px;
+  margin: 0;
+}
+.ember-application .slider-accordion-panel.active {
+  max-height: 150px;
+  transition: max-height 0.5s ease-in;
+}
+.ember-application .fields-builder-panel-wrapper .operation-type {
+  padding: 0 8px;
+}
+.ember-application .fields-builder-panel-wrapper--active .field-level::before {
+  content: " ";
+  background-image: url("/assets/arrow-return.svg");
+  position: absolute;
+  left: 22px;
+  width: 20px;
+  height: 24px;
+  background-repeat: no-repeat;
+  transform: rotate(268deg);
+}
+.ember-application .fields-builder-panel-wrapper .fields-builder-second-level {
+  margin-top: 16px;
+}
+.ember-application .fields-builder-panel-wrapper .field-level {
+  margin-left: 32px;
+}
+.ember-application .fields-builder-panel-wrapper .field-level-stretch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ember-application .fields-builder-panel-wrapper .dependant-fields-wrapper {
+  margin-top: 8px;
+}
+.ember-application .fields-builder-panel-wrapper .dependant-fields-wrapper .dependant-field-label {
+  color: #7F8695;
+}
+.ember-application .fields-builder-panel-wrapper .filter-builder-number-field {
+  max-width: 40px;
+}
+.ember-application .fields-builder-panel-wrapper .fields-builder-date-field,
+.ember-application .fields-builder-panel-wrapper .ember-flatpickr-input {
+  width: 96px;
+  padding-left: 2px;
+  padding-right: 4px;
+}
